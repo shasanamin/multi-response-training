@@ -1,0 +1,63 @@
+data:
+  source: local_mosaic
+  raw_path: data/mosaic-1k.jsonl
+  min_responses: 1
+  train_fraction: 0.86
+  validation_fraction: 0.04
+  prompt_variants_per_cluster: 1
+  eval_prompt_variants_per_cluster: 4
+  response_mode: all
+  eval_response_mode: all
+  response_index: 0
+  max_reference_responses_per_prompt: 4
+  prepared_path: ${SCRATCH_ROOT}/data/mrt/mosaic/pools_trainv1_evalv4_all_860_40_100_seed7.jsonl
+selection:
+  strategy: bkon
+  n: 4
+  k: 3
+  quality_weight_alpha: 1.0
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  score_source: reward_model
+  reward_model:
+    model_name: Skywork/Skywork-Reward-V2-Llama-3.1-8B
+    batch_size: 8
+    trust_remote_code: true
+training:
+  use_lora: true
+  max_length: 1536
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16
+  num_train_epochs: 1
+  learning_rate: 0.00012
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  logging_steps: 10
+  eval_steps: 100
+  save_steps: 100
+  save_total_limit: 2
+  gradient_checkpointing: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  optim: adamw_torch
+generation:
+  num_return_sequences_single: 1
+  num_return_sequences_multi: 8
+  multi_k_values:
+  - 2
+  - 4
+  - 8
+  max_new_tokens: 192
+  max_length_for_eval: 1536
+  temperature: 0.8
+  top_p: 0.95
+evaluation:
+  eval_batch_size: 1
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+model:
+  key: llama31_8b_instruct
+  trust_remote_code: true
+run:
+  name: mosaic_llama31_8b_instruct_bkon_p1_k3_selector
+  seed: 7

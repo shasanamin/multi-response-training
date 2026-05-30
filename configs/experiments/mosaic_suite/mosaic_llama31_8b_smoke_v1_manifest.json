@@ -1,0 +1,54 @@
+{
+  "suite_name": "mosaic_llama31_8b_smoke_v1",
+  "runtime_config": "configs/runtime/cluster.yaml",
+  "reward_model_name": "Skywork/Skywork-Reward-V2-Llama-3.1-8B",
+  "reward_batch_size": 8,
+  "checkpoint_multi_k_values": "2,4,8",
+  "experiments": [
+    {
+      "run_name": "mosaic_llama31_8b_instruct_rkon_p1_k4_smoke",
+      "config_path": "configs/experiments/mosaic_suite/mosaic_llama31_8b_instruct_rkon_p1_k4_smoke.yaml",
+      "model_key": "llama31_8b_instruct",
+      "strategy": "rkon",
+      "k": 4,
+      "prompt_variants_per_cluster": 1,
+      "response_mode": "all",
+      "stage": "smoke",
+      "experiment_tag": "smoke_explicit",
+      "gpu_id": 0,
+      "queue_order": 1,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.32
+    },
+    {
+      "run_name": "mosaic_llama31_8b_instruct_rkon_p4_k1_smoke",
+      "config_path": "configs/experiments/mosaic_suite/mosaic_llama31_8b_instruct_rkon_p4_k1_smoke.yaml",
+      "model_key": "llama31_8b_instruct",
+      "strategy": "rkon",
+      "k": 1,
+      "prompt_variants_per_cluster": 4,
+      "response_mode": "cyclic_one",
+      "stage": "smoke",
+      "experiment_tag": "smoke_implicit",
+      "gpu_id": 0,
+      "queue_order": 2,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.32
+    },
+    {
+      "run_name": "mosaic_llama31_8b_instruct_dbkon_p1_k2_smoke",
+      "config_path": "configs/experiments/mosaic_suite/mosaic_llama31_8b_instruct_dbkon_p1_k2_smoke.yaml",
+      "model_key": "llama31_8b_instruct",
+      "strategy": "dbkon",
+      "k": 2,
+      "prompt_variants_per_cluster": 1,
+      "response_mode": "all",
+      "stage": "smoke",
+      "experiment_tag": "smoke_dbkon",
+      "gpu_id": 0,
+      "queue_order": 3,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.192
+    }
+  ]
+}

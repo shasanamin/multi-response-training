@@ -1,0 +1,65 @@
+{
+  "suite_name": "gold_llama31_8b_base_k8_patch_v1",
+  "runtime_config": "configs/runtime/cluster.yaml",
+  "reward_model_name": "Skywork/Skywork-Reward-V2-Llama-3.1-8B",
+  "reward_batch_size": 8,
+  "checkpoint_multi_k_values": "2,4,6,8,16",
+  "experiments": [
+    {
+      "run_name": "gold_gens_llama31_8b_base_rkon_k8_gold_full",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_rkon_k8_gold_full.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "full",
+      "strategy": "rkon",
+      "k": 8,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 1,
+      "estimated_cost": 1.32
+    },
+    {
+      "run_name": "gold_gens_llama31_8b_base_bkon_k8_gold_full",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_bkon_k8_gold_full.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "full",
+      "strategy": "bkon",
+      "k": 8,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 2,
+      "estimated_cost": 1.32
+    },
+    {
+      "run_name": "gold_gens_llama31_8b_base_dkon_k8_gold_full",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_dkon_k8_gold_full.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "full",
+      "strategy": "dkon",
+      "k": 8,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 3,
+      "estimated_cost": 1.426
+    },
+    {
+      "run_name": "gold_gens_llama31_8b_base_dbkon_k8_gold_full",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_dbkon_k8_gold_full.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "full",
+      "strategy": "dbkon",
+      "k": 8,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 4,
+      "estimated_cost": 1.478
+    }
+  ]
+}

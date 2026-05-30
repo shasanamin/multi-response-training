@@ -1,0 +1,15 @@
+run:
+  name: prepare_gold_labelled_gens
+  seed: 7
+
+data:
+  source: hf_gold_labelled_gens
+  hf_dataset_id: tlc4418/gold_labelled_gens
+  hf_split: validation
+  prepared_path: ${SCRATCH_ROOT}/data/mrt/gold_labelled_gens/prompt_pools.jsonl
+  min_responses: 4
+  train_fraction: 0.8
+  validation_fraction: 0.1
+  max_train_prompts: null
+  max_validation_prompts: null
+  max_test_prompts: null

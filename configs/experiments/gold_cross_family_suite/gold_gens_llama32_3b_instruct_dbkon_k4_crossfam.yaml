@@ -1,0 +1,67 @@
+data:
+  source: hf_gold_labelled_gens
+  hf_dataset_id: tlc4418/gold_labelled_gens
+  hf_split: validation
+  prepared_path: ${SCRATCH_ROOT}/data/mrt/gold_labelled_gens/prompt_pools_paper_800_32_100_seed7.jsonl
+  min_responses: 4
+  train_fraction: 0.8
+  validation_fraction: 0.1
+  max_train_prompts: 800
+  max_validation_prompts: 32
+  max_test_prompts: 100
+  max_reference_responses_per_prompt: 32
+selection:
+  strategy: dbkon
+  n: 64
+  k: 4
+  quality_weight_alpha: 0.75
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  score_source: reward_model
+  reward_model:
+    model_name: Skywork/Skywork-Reward-V2-Llama-3.1-8B
+    batch_size: 8
+    trust_remote_code: true
+training:
+  use_lora: true
+  max_length: 1024
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  num_train_epochs: 1
+  learning_rate: 0.00015
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  logging_steps: 5
+  eval_steps: 100
+  save_steps: 100
+  save_total_limit: 2
+  gradient_checkpointing: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  optim: adamw_torch
+generation:
+  num_return_sequences_single: 1
+  num_return_sequences_multi: 16
+  multi_k_values:
+  - 2
+  - 4
+  - 8
+  - 16
+  max_new_tokens: 128
+  max_length_for_eval: 1024
+  temperature: 0.8
+  top_p: 0.95
+evaluation:
+  eval_batch_size: 4
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  reward_model:
+    model_name: Skywork/Skywork-Reward-V2-Llama-3.1-8B
+    batch_size: 8
+    trust_remote_code: true
+run:
+  name: gold_gens_llama32_3b_instruct_dbkon_k4_crossfam
+  seed: 7
+model:
+  key: llama32_3b_instruct
+  trust_remote_code: true

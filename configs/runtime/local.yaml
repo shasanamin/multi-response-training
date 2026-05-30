@@ -1,0 +1,21 @@
+paths:
+  scratch_root: ${SCRATCH_ROOT}
+  env_path: ${SCRATCH_ROOT}/envs/mrt
+  cache_root: ${SCRATCH_ROOT}/cache
+  hf_home: ${SCRATCH_ROOT}/cache/huggingface
+  hf_datasets_cache: ${SCRATCH_ROOT}/cache/huggingface/datasets
+  transformers_cache: ${SCRATCH_ROOT}/cache/huggingface/hub
+  xdg_cache_home: ${SCRATCH_ROOT}/cache
+  torch_home: ${SCRATCH_ROOT}/cache/torch
+  triton_cache_dir: ${SCRATCH_ROOT}/cache/triton
+  pip_cache_dir: ${SCRATCH_ROOT}/cache/pip
+  tmp_dir: ${SCRATCH_ROOT}/cache/tmp
+  mpl_config_dir: ${SCRATCH_ROOT}/cache/matplotlib
+  wandb_dir: ${SCRATCH_ROOT}/runs/mrt/wandb
+  wandb_cache_dir: ${SCRATCH_ROOT}/cache/wandb
+  data_root: ${SCRATCH_ROOT}/data/mrt
+  runs_root: ${SCRATCH_ROOT}/runs/mrt
+
+huggingface:
+  token_env: HF_TOKEN
+  cache_dir: ${SCRATCH_ROOT}/cache/huggingface

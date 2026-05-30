@@ -1,0 +1,43 @@
+{
+  "suite_name": "mosaic_llama31_8b_adaptive_full_v1",
+  "runtime_config": "configs/runtime/cluster.yaml",
+  "reward_model_name": "Skywork/Skywork-Reward-V2-Llama-3.1-8B",
+  "reward_batch_size": 8,
+  "checkpoint_multi_k_values": "2,4,8",
+  "experiments": [
+    {
+      "run_name": "mosaic_llama31_8b_instruct_adaptdiv_rkon_p1_kavg2p0_adaptive_diversity",
+      "config_path": "configs/experiments/mosaic_suite/mosaic_llama31_8b_instruct_adaptdiv_rkon_p1_kavg2p0_adaptive_diversity.yaml",
+      "model_key": "llama31_8b_instruct",
+      "strategy": "rkon",
+      "k": 4,
+      "target_mean_k": 2.0,
+      "prompt_variants_per_cluster": 1,
+      "response_mode": "all",
+      "adaptive_score": "response_embedding_diversity",
+      "stage": "full",
+      "experiment_tag": "adaptive_diversity",
+      "gpu_id": 0,
+      "queue_order": 1,
+      "checkpoint_eval": false,
+      "estimated_cost": 2.0
+    },
+    {
+      "run_name": "mosaic_llama31_8b_instruct_adaptdiv_dkon_p1_kavg2p0_adaptive_diversity",
+      "config_path": "configs/experiments/mosaic_suite/mosaic_llama31_8b_instruct_adaptdiv_dkon_p1_kavg2p0_adaptive_diversity.yaml",
+      "model_key": "llama31_8b_instruct",
+      "strategy": "dkon",
+      "k": 4,
+      "target_mean_k": 2.0,
+      "prompt_variants_per_cluster": 1,
+      "response_mode": "all",
+      "adaptive_score": "response_embedding_diversity",
+      "stage": "full",
+      "experiment_tag": "adaptive_diversity",
+      "gpu_id": 1,
+      "queue_order": 2,
+      "checkpoint_eval": false,
+      "estimated_cost": 2.2
+    }
+  ]
+}

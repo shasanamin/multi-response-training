@@ -1,0 +1,87 @@
+{
+  "suite_name": "gold_cross_family_smoke_v1",
+  "runtime_config": "configs/runtime/cluster.yaml",
+  "reward_model_name": "Skywork/Skywork-Reward-V2-Llama-3.1-8B",
+  "reward_batch_size": 8,
+  "checkpoint_multi_k_values": "2,4,8",
+  "experiments": [
+    {
+      "run_name": "gold_gens_llama32_1b_instruct_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_llama32_1b_instruct_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "llama32_1b_instruct",
+      "model_label": "llama32_1b_instruct",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 1,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.45
+    },
+    {
+      "run_name": "gold_gens_llama32_3b_instruct_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_llama32_3b_instruct_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "llama32_3b_instruct",
+      "model_label": "llama32_3b_instruct",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 2,
+      "checkpoint_eval": false,
+      "estimated_cost": 1.0
+    },
+    {
+      "run_name": "gold_gens_qwen35_2b_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_qwen35_2b_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "qwen35_2b",
+      "model_label": "qwen35_2b",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 3,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.85
+    },
+    {
+      "run_name": "gold_gens_qwen35_4b_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_qwen35_4b_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "qwen35_4b",
+      "model_label": "qwen35_4b",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 4,
+      "checkpoint_eval": false,
+      "estimated_cost": 1.25
+    },
+    {
+      "run_name": "gold_gens_gemma4_e2b_it_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_gemma4_e2b_it_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "gemma4_e2b_it",
+      "model_label": "gemma4_e2b_it",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 5,
+      "checkpoint_eval": false,
+      "estimated_cost": 0.95
+    },
+    {
+      "run_name": "gold_gens_gemma4_e4b_it_rkon_k4_crossfam_smoke",
+      "config_path": "configs/experiments/gold_cross_family_suite/gold_gens_gemma4_e4b_it_rkon_k4_crossfam_smoke.yaml",
+      "model_key": "gemma4_e4b_it",
+      "model_label": "gemma4_e4b_it",
+      "strategy": "rkon",
+      "k": 4,
+      "stage": "smoke",
+      "gpu_id": 0,
+      "queue_order": 6,
+      "checkpoint_eval": false,
+      "estimated_cost": 1.35
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrt"
+version = "0.1.0"
+description = "Experimental harness for multi-response training research."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Research use"}
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [
+    "config",
+    "data",
+    "embeddings",
+    "evaluation",
+    "formatting",
+    "jsonl_io",
+    "models",
+    "paths",
+    "reporting",
+    "reward",
+    "runtime",
+    "selection",
+    "train",
+    "utils",
+]

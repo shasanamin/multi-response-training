@@ -1,0 +1,47 @@
+[
+  {
+    "run_name": "code_contests_rkon_k1",
+    "config_path": "configs/experiments/code_contests/code_contests_rkon_k1.yaml",
+    "strategy": "rkon",
+    "k": 1,
+    "seed": 7,
+    "gpu_id": 0,
+    "estimated_hours": 2.5
+  },
+  {
+    "run_name": "code_contests_rkon_k4",
+    "config_path": "configs/experiments/code_contests/code_contests_rkon_k4.yaml",
+    "strategy": "rkon",
+    "k": 4,
+    "seed": 7,
+    "gpu_id": 0,
+    "estimated_hours": 3.0
+  },
+  {
+    "run_name": "code_contests_dkon_k4",
+    "config_path": "configs/experiments/code_contests/code_contests_dkon_k4.yaml",
+    "strategy": "dkon",
+    "k": 4,
+    "seed": 7,
+    "gpu_id": 0,
+    "estimated_hours": 3.0
+  },
+  {
+    "run_name": "code_contests_bkon_k4",
+    "config_path": "configs/experiments/code_contests/code_contests_bkon_k4.yaml",
+    "strategy": "bkon",
+    "k": 4,
+    "seed": 7,
+    "gpu_id": 1,
+    "estimated_hours": 3.5
+  },
+  {
+    "run_name": "code_contests_dbkon_k4",
+    "config_path": "configs/experiments/code_contests/code_contests_dbkon_k4.yaml",
+    "strategy": "dbkon",
+    "k": 4,
+    "seed": 7,
+    "gpu_id": 1,
+    "estimated_hours": 3.5
+  }
+]

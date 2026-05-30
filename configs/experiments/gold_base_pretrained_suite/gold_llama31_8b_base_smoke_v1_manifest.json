@@ -1,0 +1,37 @@
+{
+  "suite_name": "gold_llama31_8b_base_smoke_v1",
+  "runtime_config": "configs/runtime/cluster.yaml",
+  "reward_model_name": "Skywork/Skywork-Reward-V2-Llama-3.1-8B",
+  "reward_batch_size": 8,
+  "checkpoint_multi_k_values": "2,4,6,8,16",
+  "experiments": [
+    {
+      "run_name": "gold_gens_llama31_8b_base_rkon_k1_smoke",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_rkon_k1_smoke.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "smoke",
+      "strategy": "rkon",
+      "k": 1,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 1,
+      "estimated_cost": 0.156
+    },
+    {
+      "run_name": "gold_gens_llama31_8b_base_dbkon_k1_smoke",
+      "config_path": "configs/experiments/gold_base_pretrained_suite/gold_gens_llama31_8b_base_dbkon_k1_smoke.yaml",
+      "model_key": "llama31_8b",
+      "model_label": "llama31_8b_base",
+      "dataset_label": "gold_gens",
+      "stage_name": "smoke",
+      "strategy": "dbkon",
+      "k": 1,
+      "checkpoint_eval": false,
+      "gpu_id": 0,
+      "queue_order": 2,
+      "estimated_cost": 0.175
+    }
+  ]
+}
