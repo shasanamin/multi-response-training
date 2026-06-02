@@ -1,6 +1,6 @@
 # Multi-Response Training (MRT)
 
-Code and data for the paper "**Escaping the Mode Lottery: Multi-Response Training Improves Language Model Generalization**".
+Code and data for the paper "**Escaping the Mode Lottery: Multi-Response Training Improves Language Model Generalization**" [[arXiv]](https://arxiv.org/abs/2606.00544).
 
 ## Repository Layout
 
@@ -86,3 +86,14 @@ To relocate caches and run outputs on a cluster, set `SCRATCH_ROOT` before sourc
 - Reward-model scores and sentence embeddings are cached on disk per `(dataset, base_model, candidate_subset)`, so sweeps over `k` and selector reuse them.
 - Each `summary.json` records the full merged config, dataset preparation metadata (caps, splits, seed), reward / embedding model identifiers, and all metrics.
 - `scripts/extract_comprehensive_metrics.py` walks `results/runs/*/summary.json` to produce the consolidated CSVs used for the tables.
+
+## Citation
+
+```bibtex
+@article{amin2026escaping,
+  title={Escaping the Mode Lottery: Multi-Response Training Improves Language Model Generalization},
+  author={Amin, Hasan and Ahrabian, Kian and Yin, Ming and Khanna, Rajiv},
+  journal={arXiv preprint arXiv:2606.00544},
+  year={2026}
+}
+```
